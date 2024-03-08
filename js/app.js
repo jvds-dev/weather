@@ -1,6 +1,7 @@
 function get_weather(city){
 
-    const url = `http://127.0.0.1:5000/weather/${city}`;
+    const url = 'https://seu-usuario.pythonanywhere.com/weather/' + city;
+
 
 
     fetch(url)
