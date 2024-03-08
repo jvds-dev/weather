@@ -1,6 +1,6 @@
 function get_weather(city){
 
-    const url = 'https://seu-usuario.pythonanywhere.com/weather/' + city;
+    const url = 'https://jvds.pythonanywhere.com/weather/' + city;
 
 
 
