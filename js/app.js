@@ -66,7 +66,8 @@ function displayData(city_name,
     const months = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro']
     date.textContent = `${dateTime.getDate()} de ${months[dateTime.getMonth()]}, ${dateTime.getFullYear()}`
 
-    bgElement.style.backgroundImage = `url(../images/${condition_code}.jpg)`
+    // bgElement.style.backgroundImage = `url(../images/${condition_code}.jpg)`
+    bgElement.style.backgroundImage = `url(https://github.com/jvds-dev/weather/blob/main/images/${condition_code}.jpg?raw=true)`
 
 }
 
