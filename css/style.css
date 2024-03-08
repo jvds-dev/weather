@@ -1,0 +1,260 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    font-size: 100%;
+}
+
+.main{
+    background: #151515;
+    background-image: url(../images/snowy.jpg);
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    padding: 2%;
+    position: relative;
+    /* justify-content: center; */
+    /* align-items: center; */
+    /* gap: 15px; */
+}
+.main .title{
+    /* background: firebrick; */
+    background: #eafffe;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.main .title h2{
+    font-size: 64px
+}
+.main .title p{
+    font-size: 20px;
+    font-weight: 500;
+}
+.main .temperature-container{
+    background: #349aec77;
+    /* background: linear-gradient(-45deg, #2f91e0, #a8d8ff); */
+    backdrop-filter: blur(6px);    
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    /* box-shadow: 4px 4px 20px black; */
+    /* z-index: ; */
+}
+.main .temperature-container .top{
+    display: flex;
+    width: 100%;
+    height: 50%;
+    /* background: red; */
+}
+.main .temperature-container .top .main-temp{
+    /* background: goldenrod; */
+    height: 100%;
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* transform: translateX(0%); */
+}
+.main .temperature-container .top .weather{
+    padding-right: 50px;
+    /* background: green; */
+    height: 100%;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* transform: translateX(0%); */
+}
+.weather h3{
+    /* background: red; */
+    text-wrap: nowrap;    
+    color: #fff;
+    font-size: 24px;
+    transform: translateY(-100%);
+}
+/* .main .temperature-container .top .weather img{
+    background: red;
+} */
+.main-temp h2{
+    font-size: 64px;
+    color: #fff;
+}
+
+.main .temperature-container .other-temp{
+    /* background: steelblue; */
+    height: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 22px; 
+}
+
+#feels-temp, #min-temp, #max-temp{
+    position: relative;
+    /* background: red; */
+    width: 50px;
+    color: #fff;
+    text-align: center;
+    /* padding-left: 8px; */
+}
+
+#feels-temp::before, #min-temp::before, #max-temp::before{
+    content: "temp";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: translateY(80%);
+    font-size: 16px;
+    font-weight: 500;
+    color: #fff;
+    /* background: blue; */
+    width: 50px;
+    text-align: center;
+    justify-content: center;
+}
+
+#feels-temp::before{
+    content: "ST";
+}
+#min-temp::before{
+    content: "MIN";
+}
+#max-temp::before{
+    content: "MAX";
+}
+
+
+.input-container{
+    position: absolute;
+    top: 8%;
+    left: 50%;
+    width: 300px;
+    height: 10%;
+    background: #ffffff22;
+    background: linear-gradient(-45deg, #ffffff88, #cccccc88);
+    transform: translateX(-50%) translateY(-150%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    padding: 100px 22px;
+    transition: all .7s ease;
+    opacity: 0;
+    pointer-events: none;
+    backdrop-filter: blur(20px);
+    border-radius: 12px;
+    z-index: 10;
+}
+.input-container.active{
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+    pointer-events: all;
+    box-shadow: 4px 4px 10px #15151555;
+
+}
+
+.input-container p{
+    font-weight: 500;
+}
+
+.input-container input{
+    /* border: 2px solid #cccccc; */
+    border: none;
+    box-shadow: 0px 0px 12px #15151533;
+    outline: none;
+    border-radius: 4px;
+    padding: 8px 8px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+    width: 80%;
+    /* height: 64px; */
+}
+
+.input-container button{
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 16px;
+    background: #349aec;
+    color: #fff;
+    cursor: pointer;
+}
+
+.toggle-container{
+    position: absolute;
+    top: 6%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9;
+}
+#toggle-input{
+    position: relative;
+    border: none;
+    border-radius: 100%;
+    width: 54px;
+    height: 54px;
+    font-size: 24px;
+    background: #ffc64a;
+    /* border: 2px solid #151515; */
+    box-shadow:  0px 0px 0px #ecb234;
+    color: #efefef;
+    cursor: pointer;
+    transition: all .3s ease;
+    pointer-events: auto;
+}
+
+#toggle-input:hover{
+    background: #ffc64a;
+    box-shadow:  0px 0px 20px #ecb234;  
+}
+
+#toggle-input::before{
+    content: "Mudar cidade";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%) translateY(0%);
+    font-size: 16px;
+    background: #fff;
+    width: 0;
+    /* height: 20px; */
+    color: #151515;
+    box-shadow:  0px 0px 10px #9c9c9c55;
+    font-weight: 500;
+    border-radius: 4px;
+    transition: all .3s ease;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-wrap: nowrap;
+    z-index: -1;
+}
+#toggle-input:hover::before{
+    /* background: red; */
+    width: 140px;
+    transform: translateX(-50%) translateY(120%);
+
+
+}
+
+#toggle-input.active{
+    opacity: 0;
+    pointer-events: none;
+}
+/* 
+.fa-solid{
+    pointer-events: none;
+} */
