@@ -1,8 +1,7 @@
 function get_weather(city){
 
     const url = 'https://jvds.pythonanywhere.com/weather/' + city;
-
-
+    // const url = 'http://127.0.0.1:5000/weather/' + city
 
     fetch(url)
     .then(response  => response.json())
@@ -118,3 +117,9 @@ function search(){
     }
 
 }
+
+document.addEventListener('keydown', function(e){
+    if(e.key === 'Enter'){
+        search();
+    }
+})
